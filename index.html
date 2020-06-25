@@ -7,17 +7,14 @@
   var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1p5MR2t2dbBeUb2Kvpx98ncKCIHfkb5Y57nF2oYlvRCg/edit#gid=0';
 
   function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
-
-  function showInfo(data, tabletop) {
-    alert('Successfully processed!')
-    console.log(data);
-  }
-
-  window.addEventListener('DOMContentLoaded', init)
+  Tabletop.init( {
+    key: 'https://docs.google.com/spreadsheets/d/1p5MR2t2dbBeUb2Kvpx98ncKCIHfkb5Y57nF2oYlvRCg/pubhtml',
+    simpleSheet: true }
+  ).then(function(data, tabletop) {
+    console.log(data)
+  })
+}
+window.addEventListener('DOMContentLoaded', init)
 </script>
 
 <h1>This will be the page for all remnants from now on.</h1>
