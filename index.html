@@ -1,29 +1,93 @@
 <!DOCTYPE html>
 <html>
+<head>
+	
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="tipuesearch/tipuesearch_content.js"></script>
+  <link rel="stylesheet" href="tipuesearch/css/tipuesearch.css">
+  <script src="tipuesearch/tipuesearch_set.js"></script>
+  <script src="tipuesearch/tipuesearch.min.js"></script>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+</head>
+
 <body>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-<script type='text/javascript'>
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1p5MR2t2dbBeUb2Kvpx98ncKCIHfkb5Y57nF2oYlvRCg/edit#gid=0';
-
-  function init() {
-  Tabletop.init( {
-    key: 'https://docs.google.com/spreadsheets/d/1p5MR2t2dbBeUb2Kvpx98ncKCIHfkb5Y57nF2oYlvRCg/pubhtml',
-    simpleSheet: true }
-  ).then(function(data, tabletop) {
-    console.log(data)
-  })
-}
-window.addEventListener('DOMContentLoaded', init)
-</script>
 
 <h1>This will be the page for all remnants from now on.</h1>
 <p>List of colors to follow next.</p>
 
-<p>This is an additional commit?</p>
+<table id="remnants"></table>
 
 
-<h2>So far its ok, just dont like the editor - I prefer Sublime I guess.</h2>
+<script type='text/javascript'>    
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1p5MR2t2dbBeUb2Kvpx98ncKCIHfkb5Y57nF2oYlvRCg/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  //function getTitleHeaders(){
+  //  var ss = publicSpreadsheetUrl.getActiveSheet().getTitleHeaders();
+  //  var lr = ss.getLastRow();
+
+
+
+  //}
+
+  function showInfo(data, tabletop) {
+    //alert('Successfully processed!')
+    //console.log(data);
+    //var title = "<th>"
+    var frame = "<tr>";
+		
+  // double for-loops to do rows, cells in a tab
+	for ( i = 0; i < data.length; i++ ) {
+			for ( prop in data[i] ) {
+					frame += "<td>" + data[i][prop] + "</td>";
+    	}
+			frame += "</tr><tr>";
+	}
+	document.getElementById("remnants").innerHTML = frame;
+
+  }
+
+  window.addEventListener('DOMContentLoaded', init);
+</script>
+
+<h2>Let's add a search function</h2>
+
+<form class="example" action="index.html" style="max-width:300px">
+<div class="tipue_search_group">
+<input type="text" placeholder="Search ..." name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button type="submit" class="tipue_search_button"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i></button>
+<!--<div class="tipue_search_icon">&#9906;</div> == this is just an icon inside button -->
+</div>
+</form>
+
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+});
+</script>
+
+<h3>Here's your result below ... </h3>
+<div id="tipue_search_content"></div>
+
+
+
+<p>-----------------------------------</p>
+
+<h3>We need to add a collection form</h3>
+
+<p>----------------------------------</p>
+
+//<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRk3n803G78hjy1ckMdB9neCsvSysdKzYDWQ0AGh94YREW6di82IHc1v91dfF71vdMmtsyRF5X0lfNR/pubhtml?widget=true&amp;headers=false"></iframe>
 
 
 
