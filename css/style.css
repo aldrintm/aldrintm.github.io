@@ -14,8 +14,10 @@
 }
 
 .div_background {
-  background-color: #F8F8FF;
-  padding: 50px
+  background-color: #c6d9ec;
+  padding: 50px;
+  border: 1px solid #0080ff;
+  border-radius: 8px;
 }
 
 /* .table .table-condensed .table-striped {
