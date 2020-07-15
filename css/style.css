@@ -1,12 +1,36 @@
+/* style.css */
+ 
+.subheading {
+	font-family: 'Nunito', sans-serif;
+	font-size: 10px;
+	text-align: center;
+  margin-bottom: 15px
+}
 
+.display-4 {
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+  margin-bottom: 20px
+}
 
-#remnants {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+.div_background {
+  background-color: #F8F8FF;
+  padding: 50px
+}
+
+/* .table .table-condensed .table-striped {
+	font-family: 'Nunito', sans-serif;
+	font-size: 10px;
+
+} */
+
+#remnants, #search {
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#remnants td /*#remnants th*/ {
+#remnants td, #search td {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -15,45 +39,10 @@
 
 #remnants tr:hover {background-color: #ddd;}
 
-#remnants th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+#remnants th, #search th  {
+  padding: 8px;
   text-align: left;
   background-color: #4CAF50;
   color: white;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-}
-
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
-}
-
-form.example button:hover {
-  background: #0b7dda;
-}
-
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
+  text-transform:uppercase;
 }
