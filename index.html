@@ -1,96 +1,231 @@
 <!DOCTYPE html>
-<html>
-<head>
-	
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="drive_48dp.png" type="image/gif" sizes="16x16">
 
-  <script src="tipuesearch/tipuesearch_content.js"></script>
-  <link rel="stylesheet" href="tipuesearch/css/tipuesearch.css">
-  <script src="tipuesearch/tipuesearch_set.js"></script>
-  <script src="tipuesearch/tipuesearch.min.js"></script>
-
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-</head>
-
-<body>
-
-<h1>This will be the page for all remnants from now on.</h1>
-<p>List of colors to follow next.</p>
-
-<table id="remnants"></table>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
 
 
-<script type='text/javascript'>    
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1p5MR2t2dbBeUb2Kvpx98ncKCIHfkb5Y57nF2oYlvRCg/pubhtml';
-
-  function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
-
-  //function getTitleHeaders(){
-  //  var ss = publicSpreadsheetUrl.getActiveSheet().getTitleHeaders();
-  //  var lr = ss.getLastRow();
+    <title>Partial Slab App</title>
 
 
 
-  //}
+    <!-- Load jQuery and Sheetrock from CDNJS -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
 
-  function showInfo(data, tabletop) {
-    //alert('Successfully processed!')
-    //console.log(data);
-    //var title = "<th>"
-    var frame = "<tr>";
-		
-  // double for-loops to do rows, cells in a tab
-	for ( i = 0; i < data.length; i++ ) {
-			for ( prop in data[i] ) {
-					frame += "<td>" + data[i][prop] + "</td>";
-    	}
-			frame += "</tr><tr>";
-	}
-	document.getElementById("remnants").innerHTML = frame;
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>    
 
-  }
+    <script src="js/script.js"></script>
+  </head>
+  <body>
 
-  window.addEventListener('DOMContentLoaded', init);
-</script>
+   
 
-<h2>Let's add a search function</h2>
+    <div style="width:100%">
+      <!-- page content -->
+      <p class="display-4">Partial Inventory Manager List</p>  
+      <!-- <p class="subheading">( Use this page to update inventory )</button></-->
+      <!-------------------------------------------------------------------->
 
-<form class="example" action="index.html" style="max-width:300px">
-<div class="tipue_search_group">
-<input type="text" placeholder="Search ..." name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required><button type="submit" class="tipue_search_button"><i class="fa fa-circle-o-notch fa-spin fa-fw"></i></button>
-<!--<div class="tipue_search_icon">&#9906;</div> == this is just an icon inside button -->
-</div>
+      
+      
+      <!---<div class="search_box">
+        <input type="text" id="search_input" placeholder="Search for a color name here ..." class="form-control"><br><br>
+      </div>
+
+  
+
+      
+      <!-------------------------------------------------------------------->
+      <!--<table id="was_remnants"></table> -->
+
+      
+
+
+
+<div class="div_background"> 
+
+
+<form name="submit-to-google-sheet">
+  
+  <label for="cars">Type of Stone / Brand:</label>
+    <select name="brand" id="brand" class="form-control">
+      <optgroup label="Caesarstone">
+        <option>Pick from the list</option>
+        <option>Caesarstone</option>
+        <option>Cambria</option>
+        <option>Silestone</option>
+        <option>LG Viatera</option>
+        <option>Vadara</option>
+        <option>MSI Q Quartz</option>
+        <option>One Quartz</option>
+        <option>Pental Quartz</option>
+        <option>Corian Quartz</option>
+        <option>AZT Quartz</option>
+        <option>Eurostone</option>
+        <option>Diresco</option>
+        <option>Dekton</option>
+        <option>Neolith</option>
+      </optgroup>
+    </select>
+    <br>
+
+    <label for="cars">Color:</label>
+      <select name="color" id="color" class="form-control">
+        <optgroup label="Caesarstone">
+          <option>Pick from the list</option>
+          <option>Cement</option>
+          <option>Jet Black</option>
+          <option>Ocean Foam</option>
+          <option>Ice Snow</option>
+          <option>Concrete</option>
+          <option>Haze</option>
+          <option>Blizzard</option>
+          <option>Eggshell</option>
+          <option>Pebble</option>
+          <option>Raven</option>
+          <option>Clamshell</option>
+        </optgroup>
+        <optgroup label="Cambria">
+          <option>Annica</option>
+          <option>Brittanica Gold</option>
+          <option>New Montgomery</option>
+          <option>Summerhill</option>
+          <option>Torquay</option>
+          <option>Praa Sands</option>
+          <option>Kelvingrove</option>
+          <option>Hadley</option>
+          <option>Portrush</option>
+          <option>Mersey</option>
+          <option>Swanbridge</option>
+          </optgroup>
+      </select>
+      <br>
+
+      <label for="finish">Suface Finish:</label>
+        <select name="finish" id="finish" class="form-control">
+          <option>Polished</option>
+          <option>Honed</option>
+          <option>Matte</option>
+          <option>Concrete</option>
+          <option>Leather</option>
+          <option>XGLoss</option>
+          </optgroup>
+        </select>
+        <br>
+
+      <label for="thickness">Slab Thickness:</label>
+        <select name="thickness" id="thickness" class="form-control">
+          <option>2cm</option>
+          <option>3cm</option>
+          <option>12mm</option>
+          </optgroup>
+        </select>
+        <br>
+
+      <label for="length">Length of Slab:</label>
+      <select name="length" id="length" class="form-control">
+        <option>30"</option>
+        <option>35"</option>
+        <option>40"</option>
+        <option>45"</option>
+        <option>50"</option>
+        <option>55"</option>
+        <option>60"</option>
+        <option>65"</option>
+        <option>70"</option>
+        <option>75"</option>
+        <option>80"</option>
+        <option>85"</option>
+        <option>90"</option>
+        <option>95"</option>
+        <option>100"</option>
+        <option>105"</option>
+        <option>110"</option>
+        <option>115"</option>
+        <option>120"</option>
+        <option>125"</option>
+        <option>130"</option>
+        <option>132"</option>
+        </optgroup>
+      </select>
+      <br>
+
+      <label for="width">Width of Slab:</label>
+      <select name="width" id="width" class="form-control">
+        <option>20"</option>
+        <option>22"</option>
+        <option>24"</option>
+        <option>26"</option>
+        <option>28"</option>
+        <option>30"</option>
+        <option>32"</option>
+        <option>34"</option>
+        <option>36"</option>
+        <option>38"</option>
+        <option>40"</option>
+        <option>42"</option>
+        <option>44"</option>
+        <option>46"</option>
+        <option>48"</option>
+        <option>50"</option>
+        <option>52"</option>
+        <option>54"</option>
+        <option>56"</option>
+        <option>58"</option>
+        <option>62"</option>
+        <option>64"</option>
+        <option>66"</option>
+        <option>68"</option>
+        <option>70"</option>
+        <option>72"</option>
+        <option>74"</option>
+        <option>76"</option>
+        <option>78"</option>
+        <option>80"</option>
+        </optgroup>
+      </select>
+      <br>
+
+      <label for="salesperson">Salesperson:</label>
+      <select name="salesperson" id="salesperson" class="form-control">
+        <option>Aldrin</option>
+        <option>Sondra</option>
+        <option>Angel</option>
+        </optgroup>
+      </select>
+      <br>
+
+
+  <button type="submit" class="btn btn-outline-danger">Update List</button>
+
 </form>
 
+</div>
+
 <script>
-$(document).ready(function() {
-     $('#tipue_search_input').tipuesearch();
-});
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbytvK2xLZDPszaejBL5C6QPzHW1Kp4BwFV_zuiR4xDl8cIhp7I/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
 </script>
 
-<h3>Here's your result below ... </h3>
-<div id="tipue_search_content"></div>
+      
 
-
-
-<p>-----------------------------------</p>
-
-<h3>We need to add a collection form</h3>
-
-<p>----------------------------------</p>
-
-//<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRk3n803G78hjy1ckMdB9neCsvSysdKzYDWQ0AGh94YREW6di82IHc1v91dfF71vdMmtsyRF5X0lfNR/pubhtml?widget=true&amp;headers=false"></iframe>
-
-
-
-
-</body>
+    </div>
+  <script src="js/search.js"></script>
+  </body>
 </html>
