@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
 
 
-    <title>Partial Slab App</title>
+    <title>Partial Slab Inventory App</title>
+
+
 
 
 
@@ -23,39 +25,43 @@
 
   <div style="width:100%">
       <!-- page content -->
-      <p class="display-4">Partial Slabs Master List</p>  
+      <p class="display-4">Partial Slabs Inventory Master List</p>  <br>
       <!-- <p class="subheading">( Use this page to update inventory )</button></-->
 
         <div class="div_background"> 
 
-<form name="submit-to-google-sheet">
+
+<!--Todo = Validation -->
+<form id="inventory-form" name="submit-to-google-sheet">
+
+  <div class="alert">Submission Confirmed!</div>
   
-  <label for="cars">Type of Stone / Brand:</label>
-    <select name="brand" id="brand" class="form-control">
-      <optgroup label="Caesarstone">
-        <option>Pick from the list</option>
-        <option>Caesarstone</option>
-        <option>Cambria</option>
-        <option>Silestone</option>
-        <option>LG Viatera</option>
-        <option>Vadara</option>
-        <option>MSI Q Quartz</option>
-        <option>One Quartz</option>
-        <option>Pental Quartz</option>
-        <option>Corian Quartz</option>
-        <option>AZT Quartz</option>
-        <option>Eurostone</option>
-        <option>Diresco</option>
-        <option>Dekton</option>
-        <option>Neolith</option>
-      </optgroup>
+  <label for="brand">Type of Stone / Brand:</label>
+    <select name="brand" id="brand" class="form-control" required>
+      <!--<optgroup label="Caesarstone">-->
+        <option value="" disabled selected>Choose from the list</option>
+        <option value="Caesarstone">Caesarstone</option>
+        <option value="Cambria">Cambria</option>
+        <option value="Silestone">Silestone</option>
+        <option value="Viatera">LG Viatera</option>
+        <option value="Vadara">Vadara</option>
+        <option value="Vadara">MSI Q Quartz</option>
+        <option value="Vadara">One Quartz</option>
+        <option value="Vadara">Pental Quartz</option>
+        <option value="Vadara">Corian Quartz</option>
+        <option value="Vadara">AZT Quartz</option>
+        <option value="Vadara">Eurostone</option>
+        <option value="Vadara">Diresco</option>
+        <option value="Vadara">Dekton</option>
+        <option value="Vadara">Neolith</option>
     </select>
     <br>
 
-    <label for="cars">Color:</label>
-      <select name="color" id="color" class="form-control">
-        <optgroup label="Caesarstone">
-          <option>Pick from the list</option>
+    <label for="color">Color:</label>
+      <select name="color" id="color" class="form-control" required>
+          <option value="" disabled selected>Choose from the list</option>
+          <option>???</option>
+        <optgroup label="Caesarstone">  
           <option>Cement</option>
           <option>Jet Black</option>
           <option>Ocean Foam</option>
@@ -69,44 +75,249 @@
           <option>Clamshell</option>
         </optgroup>
         <optgroup label="Cambria">
+          <option>Aberdeen</option>
           <option>Annica</option>
+          <option>Aragon</option>
+          <option>Archdale</option>
+          <option>Armitage</option>
+          <option>Ashbourne Matte</option>
+          <option>Ashford</option>
+          <option>Bala Blue</option>
+          <option>Bay Bridge</option>
+          <option>Beaumont</option>
+          <option>Bellingham</option>
+          <option>Bellwater</option>
+          <option>Bentley</option>
+          <option>Berkeley</option>
+          <option>Berwyn</option>
+          <option>Big Sur Mist</option>
+          <option>Black Rock</option>
+          <option>Blackpool Matte</option>
+          <option>Blackwood</option>
+          <option>Bradford</option>
+          <option>Bradshaw</option>
+          <option>Bradwell</option>
+          <option>Braemar</option>
+          <option>Brecon Brown</option>
+          <option>Brentwood</option>
+          <option>Bridgewater</option>
+          <option>Bridport</option>
+          <option>Brighstone</option>
+          <option>Bristol Blue</option>
+          <option>Brittanica</option>
+          <option>Brittanica Block</option>
           <option>Brittanica Gold</option>
-          <option>New Montgomery</option>
-          <option>Summerhill</option>
-          <option>Torquay</option>
-          <option>Praa Sands</option>
-          <option>Kelvingrove</option>
+          <option>Brittanica Warm</option>
+          <option>Brookvale</option>
+          <option>Brownhill</option>
+          <option>Buckingham</option>
+          <option>Burnbury</option>
+          <option>Burton Brown</option>
+          <option>Buxton</option>
+          <option>Caerphilly Green</option>
+          <option>Cambria Black</option>
+          <option>Cambria Gold</option>
+          <option>Canongate</option>
+          <option>Canterbury</option>
+          <option>Cardiff Cream</option>
+          <option>Cardigan Red</option>
+          <option>Carlisle Gray</option>
+          <option>Carmarthen Brown</option>
+          <option>Carrick</option>
+          <option>Castell</option>
+          <option>Castlemartin</option>
+          <option>Charlestown</option>
+          <option>Charston</option>
+          <option>Chatham</option>
+          <option>Chatsworth</option>
+          <option>Cherrybrook</option>
+          <option>Chicago Tower</option>
+          <option>Clairidge</option>
+          <option>Clareanne</option>
+          <option>Clovelly</option>
+          <option>Clyde</option>
+          <option>Collybrooke</option>
+          <option>Colton</option>
+          <option>Coswell Cream</option>
+          <option>Cranbrook</option>
+          <option>Crowndale</option>
+          <option>Cuddington</option>
+          <option>Darlington</option>
+          <option>Daron</option>
+          <option>Delgatie</option>
+          <option>Devon</option>
+          <option>Dovedale</option>
+          <option>Dover</option>
+          <option>Dovestone</option>
+          <option>Dunmore</option>
+          <option>Durham</option>
+          <option>Edinburough</option>
+          <option>Ella</option>
+          <option>Ellesmere</option>
+          <option>Fairbourne</option>
+          <option>Ferndale</option>
+          <option>Fieldstone</option>
+          <option>Flintblack</option>
+          <option>Foggy City</option>
+          <option>Galloway</option>
+          <option>Gladstone</option>
+          <option>Golden Dragon</option>
+          <option>Greystone</option>
           <option>Hadley</option>
-          <option>Portrush</option>
+          <option>Halstead</option>
+          <option>Hamilton</option>
+          <option>Hampshire</option>
+          <option>Harlech</option>
+          <option>Harrogate</option>
+          <option>Havergate</option>
+          <option>Hawkridge</option>
+          <option>Hawksmoore</option>
+          <option>Hazelford</option>
+          <option>Helmsley</option>
+          <option>Henley</option>
+          <option>Highgate</option>
+          <option>Hollinsbrook</option>
+          <option>Huntley</option>
+          <option>Hyde Park</option>
+          <option>Ironsbridge</option>
+          <option>Islington</option>
+          <option>Kelvingrove</option>
+          <option>Kensington</option>
+          <option>Kentmere</option>
+          <option>Kentucky Coal</option>
+          <option>Kingston</option>
+          <option>Kirkstead</option>
+          <option>Lancaster</option>
+          <option>Laneshaw</option>
+          <option>Langdon</option>
+          <option>Levven</option>
+          <option>Lincolnshire</option>
+          <option>Linwood</option>
+          <option>Malvern</option>
+          <option>Mammoth Cave</option>
+          <option>Manchester</option>
+          <option>Marwell</option>
+          <option>Mayfair</option>
+          <option>Menai</option>
           <option>Mersey</option>
+          <option>Minera</option>
+          <option>Minnesota Snow</option>
+          <option>Montana Midnight</option>
+          <option>Montgomery</option>
+          <option>Myddleton</option>
+          <option>Nadenbrook</option>
+          <option>Nevern</option>
+          <option>New Brighton</option>
+          <option>New Castle</option>
+          <option>New Quay</option>
+          <option>Newhaven</option>
+          <option>Newport</option>
+          <option>Nottingham</option>
+          <option>Oakhampton</option>
+          <option>Oakmoor</option>
+          <option>Oxford</option>
+          <option>Oxwich Green</option>
+          <option>Park Gate</option>
+          <option>Parys</option>
+          <option>Pendle Hill</option>
+          <option>Portrush</option>
+          <option>Praa Sands</option>
+          <option>Preston</option>
+          <option>Princetown</option>
+          <option>Queen Anne</option>
+          <option>Queensbury</option>
+          <option>Ramsey</option>
+          <option>Reading</option>
+          <option>Ridgegate</option>
+          <option>Risegate</option>
+          <option>Rose Bay</option>
+          <option>Rosedale</option>
+          <option>Rosslyn</option>
+          <option>Roxwell</option>
+          <option>Salt Lake</option>
+          <option>Sanford</option>
+          <option>Sanibel Shoreline</option>
+          <option>Seacourt</option>
+          <option>Seagrove</option>
+          <option>Seattle Rain</option>
+          <option>Sharpham</option>
+          <option>Sheffield</option>
+          <option>Sherwood</option>
+          <option>Shirebrook</option>
+          <option>Skara Brae</option>
+          <option>Skye</option>
+          <option>Smithfield</option>
+          <option>Snowdon White</option>
+          <option>Somerset</option>
+          <option>Southampton</option>
+          <option>St. Giles</option>
+          <option>Stafford Brown</option>
+          <option>Stone Mountain</option>
+          <option>Summerbrook</option>
+          <option>Summerhill</option>
+          <option>Sutherland</option>
+          <option>Sutton</option>
           <option>Swanbridge</option>
-          </optgroup>
+          <option>Talbot Gray</option>
+          <option>Templeton</option>
+          <option>Tenby Cream</option>
+          <option>Torquay</option>
+          <option>Trafalgar</option>
+          <option>Travella</option>
+          <option>Vail Village</option>
+          <option>Victoria</option>
+          <option>Walton</option>
+          <option>Warwick</option>
+          <option>Waterford</option>
+          <option>Waverton</option>
+          <option>Wellington</option>
+          <option>Welshpool Black</option>
+          <option>Wentwood</option>
+          <option>Westminster</option>
+          <option>Weybourne</option>
+          <option>Whitby</option>
+          <option>White Cliff</option>
+          <option>White Plains</option>
+          <option>White Hall</option>
+          <option>Whitendale</option>
+          <option>Whitney</option>
+          <option>Williston</option>
+          <option>Whilshire Red</option>
+          <option>Winchester</option>
+          <option>Winderemere</option>
+          <option>Windrush</option>
+          <option>Windsor</option>
+          <option>Winterbourne</option>
+          <option>Wisley</option>
+          <option>Woodcroft</option>
+        </optgroup>
       </select>
       <br>
 
       <label for="finish">Suface Finish:</label>
-        <select name="finish" id="finish" class="form-control">
+        <select name="finish" id="finish" class="form-control" required>
+          <option value="" disabled selected>Type of Finish</option>
           <option>Polished</option>
           <option>Honed</option>
           <option>Matte</option>
           <option>Concrete</option>
           <option>Leather</option>
           <option>XGLoss</option>
-          </optgroup>
         </select>
         <br>
 
       <label for="thickness">Slab Thickness:</label>
-        <select name="thickness" id="thickness" class="form-control">
+        <select name="thickness" id="thickness" class="form-control" required>
+          <option value="" disabled selected>Slab Thickness</option>
           <option>2cm</option>
           <option>3cm</option>
           <option>12mm</option>
-          </optgroup>
         </select>
         <br>
 
       <label for="length">Length of Slab:</label>
-      <select name="length" id="length" class="form-control">
+      <select name="length" id="length" class="form-control" required>
+        <option value="" disabled selected>Choose the nearest length</option>
         <option>30"</option>
         <option>35"</option>
         <option>40"</option>
@@ -129,12 +340,12 @@
         <option>125"</option>
         <option>130"</option>
         <option>132"</option>
-        </optgroup>
       </select>
       <br>
 
       <label for="width">Width of Slab:</label>
-      <select name="width" id="width" class="form-control">
+      <select name="width" id="width" class="form-control" required>
+        <option value="" disabled selected>Choose the nearest width</option>
         <option>20"</option>
         <option>22"</option>
         <option>24"</option>
@@ -165,21 +376,36 @@
         <option>76"</option>
         <option>78"</option>
         <option>80"</option>
-        </optgroup>
+      </select>
+      <br>
+
+      <label for="location">Location:</label>
+      <select name="location" id="location" class="form-control" required>
+        <option value="" disabled selected>Shop Location</option>
+        <option>Caesarstone Area</option>
+        <option>Cambria Area</option>
+        <option>Silestone Area</option>
+        <option>LG Viatera Area</option>
+        <option>Dekton Area</option>
+        <option>MSI/Vadara Area</option>
+        <option>Section A</option>
+        <option>Section B</option>
+        <option>Section C</option>
+        <option>Section D</option>    
+        <option>Corian Area</option>    
       </select>
       <br>
 
       <label for="salesperson">Salesperson:</label>
-      <select name="salesperson" id="salesperson" class="form-control">
+      <select name="salesperson" id="salesperson" class="form-control" required>
+        <option value="" disabled selected>List Updated by</option>
         <option>Aldrin</option>
         <option>Sondra</option>
         <option>Angel</option>
-        </optgroup>
       </select>
       <br>
 
-
-  <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="window.location.reload();">Update List</button>
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Update List</button>
 
 
 </form>
@@ -187,18 +413,10 @@
 </div>
 
 </div>
-
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzXph3fBFWYTWTIa_bZZOMqIFKMaewM0vR1DQwNTmyYU8UqGDg/exec'
-  const form = document.forms['submit-to-google-sheet']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-</script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
