@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
+
+
+    <title>Partial Slab Inventory App</title>
+</head>
+
+<body>
+
+<div style="width:100%">
+<!-- page content -->
+<p class="display-4">Partial Slabs Inventory Master List</p>  <br>
+<!-- <p class="subheading">( Use this page to update inventory )</button></-->
+
+<div class="div_background"> 
+
+
+    <h5 class="display-4">Enter the stone color to search our inventory:</h5>
+    <div class="display"><input type="text" class="form-control" id="stone" required="required"><br><br></div>
+    <button onclick="getColor()" class="btn-primary btn-lg btn-block" id="btn">Find me a Partial Slab</button>
+    <br>
+    <div class="egghead">
+    <p><!--Brand: --> <span id="brand"></span></p>
+    <p><!--Color: -->  <span id="color"></span></p>
+    <p><!--Finish: -->  <span id="finish"></span></p>
+    <p><!--Thickness:  --> <span id="thickness"></span></p>
+    <p><!--Length:  --> <span id="length"></span></p>
+    <p><!--Width:  --> <span id="width"></span></p>
+    <p><!--Location:  --> <span id="location"></span></p>
+    <p><!--Salesperson: --> <span id="staff"></span></p>
+    </div>
+
+    <hr>
+    <input type="text" id="myInput" class="form-control" onkeyup="findPartial()" placeholder="Enter the name of the quartz color .." title="Type in a name">
+    <hr>
+
+    <div style="overflow-x:auto;">
+        
+            <!--<table class="table">
+                <tr>
+                    <td></td>
+                </tr>
+            </table> -->
+            <table style="width:100%" id="table">
+                <tr id="tr">
+                    <th>Brand:</th>
+                    <th>Color:</th> 
+                    <th>Finish:</th>
+                    <th>Thickness:</th>
+                    <th>Length:</th>
+                    <th>Width:</th>
+                    <th>Location:</th>
+                    <th>Staff:</th>
+            </table>
+        
+    </div>
+
+</div>
+
+
+
+</div>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+<script src="search.js"></script>
+
+</body>
+</html>
