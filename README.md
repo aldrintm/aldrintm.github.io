@@ -23,3 +23,9 @@
   - click a button to select text input
   - click a button to select search.html
   
+
+# script.js
+  - script for index.html
+  
+# search.js
+  - script for search.html
